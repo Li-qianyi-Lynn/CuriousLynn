@@ -1,5 +1,6 @@
 import careerAIImg from '../assets/careerAI.png';
-// import hivideoImg from '../assets/hivideo.png';
+import hciProjectImg from '../assets/hciProject.png';
+import hivideoImg from '../assets/hivideo.png';
 import lynnCatsWebImg from '../assets/lynnCatsWeb.png';
 import policyAnalyzerImg from '../assets/policyAnalyzer.png';
 import SceneSoundImg from '../assets/SceneSound.png';
@@ -7,6 +8,8 @@ import snappyLinkImg from '../assets/snappyLink.png';
 import sweeperImg from '../assets/sweeper.png';
 import webdesignImg from '../assets/web2.png';
 import webDevImg from '../assets/webDev.png';
+import frontendBannerImg from '../assets/frontendBanner.png';
+import goodToolsBannerImg from '../assets/goodToolsBanner.png';
 
 
 
@@ -19,6 +22,7 @@ export const projectCategories = [
     title: 'AI + HCI Interaction',
     desc: "Exploring how LLMs can enhance human cognition. Think of it as 'Purr-sonalized AI'.",
     icon: 'sparkles',
+    bannerImage: hciProjectImg,
     projects: [
       {
         name: 'career-ai',
@@ -30,7 +34,7 @@ export const projectCategories = [
         name: 'hivideo',
         link: 'https://github.com/Li-qianyi-Lynn/hivideo',
         description: 'A lovely tool that uses your webcam to detect a fast “bye‑bye” hand‑wave gesture and force‑quit Zoom automatically.',
-        // image: hivideoImg
+        image: hivideoImg
 
       },
       {
@@ -47,6 +51,7 @@ export const projectCategories = [
     title: 'Frontend Design',
     desc: 'Crafting pixel-perfect, psychologically intuitive UIs. Meow-velous user experiences.',
     icon: 'layout',
+    bannerImage: frontendBannerImg,
     projects: [
       {
         name: 'lynn-cats-web',
@@ -76,6 +81,7 @@ export const projectCategories = [
     desc:
       'Practical tools for cleaning data, shortening links, and analyzing complex policy documents.',
     icon: 'file-search',
+    bannerImage: goodToolsBannerImg,
     projects: [
       {
         name: 'rise2gether-sweeper',

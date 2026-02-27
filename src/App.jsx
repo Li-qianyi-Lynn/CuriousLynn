@@ -51,7 +51,7 @@ const App = () => {
         tagline: 'Bridging Silicon and Synapse',
         longDesc:
           "My work in AI+HCI focuses on making artificial intelligence feel more human and intuitive. By applying cognitive load theories and emotional design, I build interfaces that don't just process data, but understand human intent.",
-        // 4 个沉浸式项目卡片：复用主页 3 个 + 1 个概念项目
+        bannerImage: base.bannerImage,
         projects: [
           ...base.projects,
           {
@@ -72,6 +72,7 @@ const App = () => {
         tagline: 'Pixels with Purpose',
         longDesc:
           "Design is more than aesthetics; it's about guiding attention and reducing friction. I use React and motion design to create fluid, delightful interfaces that respect the user's mental model.",
+        bannerImage: base.bannerImage,
         projects: [
           ...base.projects,
           {
@@ -92,6 +93,7 @@ const App = () => {
         tagline: 'Bridging Systems and Policy',
         longDesc:
           "I enjoy building practical, end-to-end tools that move messy data into structured insight—from CSV cleaning pipelines and URL utilities to NLP workflows for reading long policy PDFs.",
+        bannerImage: base.bannerImage,
         projects: [
           ...base.projects,
           {

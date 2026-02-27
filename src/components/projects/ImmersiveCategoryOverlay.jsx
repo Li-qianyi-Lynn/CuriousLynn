@@ -72,7 +72,7 @@ const ImmersiveCategoryOverlay = ({ viewMode, category, onClose }) => {
                 </p>
               )}
             </div>
-            {/* 视觉演示占位 */}
+            {/* 分类头部图：由 projects 数据中的 bannerImage 控制 */}
             <div
               className={`aspect-video rounded-3xl overflow-hidden flex items-center justify-center border-4 ${
                 isEmpathy
@@ -80,12 +80,20 @@ const ImmersiveCategoryOverlay = ({ viewMode, category, onClose }) => {
                   : 'bg-slate-900 border-emerald-900/20'
               }`}
             >
-              <div className="text-center space-y-3 opacity-30">
-                <ImageIcon size={64} className="mx-auto" />
-                <p className="text-xs uppercase font-bold tracking-[0.2em]">
-                  [Concept Visualization]
-                </p>
-              </div>
+              {category.bannerImage ? (
+                <img
+                  src={category.bannerImage}
+                  alt={`${category.title} visualization`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-center space-y-3 opacity-30">
+                  <ImageIcon size={64} className="mx-auto" />
+                  <p className="text-xs uppercase font-bold tracking-[0.2em]">
+                    [Concept Visualization]
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
