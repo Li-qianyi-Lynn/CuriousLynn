@@ -11,9 +11,9 @@ export const projectCategories = [
         description: 'Conversational AI experiments around career exploration and reflective questions.'
       },
       {
-        name: 'astrology_chatbot',
-        link: 'https://github.com/Li-qianyi-Lynn/astrology_chatbot',
-        description: 'Playful chatbot that blends personality, astrology and dialogue design.'
+        name: 'hivideo',
+        link: 'https://github.com/Li-qianyi-Lynn/hivideo',
+        description: 'Working with video data in the context of policy and communication.'
       },
       {
         name: 'SceneSound-LynnVersion',
@@ -83,11 +83,6 @@ export const projectCategories = [
         name: 'policy-analyzer-II',
         link: 'https://github.com/Li-qianyi-Lynn/policy-analyzer-II',
         description: 'An iteration focusing more on NLP pipelines and experiment tracking.'
-      },
-      {
-        name: 'hivideo',
-        link: 'https://github.com/Li-qianyi-Lynn/hivideo',
-        description: 'Working with video data in the context of policy and communication.'
       }
     ]
   }

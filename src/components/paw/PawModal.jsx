@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { Mail, MessageSquare, PawPrint, Send, ShieldCheck, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { firebaseEnv } from '../../lib/firebase';
 
 const PawModal = ({ isOpen, onClose, viewMode }) => {
@@ -9,6 +9,9 @@ const PawModal = ({ isOpen, onClose, viewMode }) => {
   const [newComment, setNewComment] = useState('');
   const [userName, setUserName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [privateEmail, setPrivateEmail] = useState('');
+  const [privateMessage, setPrivateMessage] = useState('');
+  const [isSendingPrivate, setIsSendingPrivate] = useState(false);
 
   const { auth, db, appId, addDoc, collection, onSnapshot, query, serverTimestamp, onAuthStateChanged, signInAnonymously, signInWithCustomToken } =
     firebaseEnv;
@@ -63,6 +66,26 @@ const PawModal = ({ isOpen, onClose, viewMode }) => {
     return () => unsubscribe();
   }, [isOpen, firebaseReady, user, db, collection, query, onSnapshot, appId]);
 
+  const submitPrivateNote = async () => {
+    if (!privateEmail.trim() || !privateMessage.trim() || !user || !firebaseReady) return;
+
+    setIsSendingPrivate(true);
+    try {
+      await addDoc(collection(db, 'artifacts', appId, 'private', 'data', 'paws'), {
+        email: privateEmail,
+        content: privateMessage,
+        createdAt: serverTimestamp(),
+        mode: viewMode,
+        userId: user.uid
+      });
+      setPrivateEmail('');
+      setPrivateMessage('');
+    } catch (e) {
+      console.error('Error adding private note: ', e);
+    }
+    setIsSendingPrivate(false);
+  };
+
   const submitComment = async () => {
     if (!newComment.trim() || !user || !firebaseReady) return;
     setIsSubmitting(true);
@@ -88,7 +111,7 @@ const PawModal = ({ isOpen, onClose, viewMode }) => {
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
       <div
-        className={`w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col rounded-[3rem] shadow-2xl animate-in zoom-in-95 duration-300 ${
+        className={`w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col rounded-[3rem] shadow-2xl animate-in zoom-in-95 duration-300 ${
           isEmpathy ? 'bg-white' : 'bg-[#0a0f14] border border-emerald-500/30'
         }`}
       >
@@ -229,7 +252,7 @@ const PawModal = ({ isOpen, onClose, viewMode }) => {
               </div>
             )
           ) : (
-            <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
+            <div className="h-full flex flex-col items-center justify-start text-center space-y-6 py-6">
               <div
                 className={`w-20 h-20 rounded-full flex items-center justify-center ${
                   isEmpathy ? 'bg-rose-100 text-rose-500' : 'bg-emerald-900/30 text-emerald-400'
@@ -237,22 +260,53 @@ const PawModal = ({ isOpen, onClose, viewMode }) => {
               >
                 <ShieldCheck size={40} />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold">Encrypted Connection</h3>
-                <p className="text-sm opacity-60 max-w-xs">
-                  This message will be sent directly to Lynn&apos;s inbox. No one else can see this.
+              <div className="space-y-2 max-w-sm mx-auto">
+                <h3 className="text-xl font-bold">Private Note to Lynn</h3>
+                <p className="text-sm opacity-60">
+                  This note will be sent directly to Lynn&apos;s inbox. Please leave your email so she
+                  can respond if needed.
                 </p>
               </div>
-              <a
-                href="mailto:lynn@example.com?subject=Private Paw from Website"
-                className={`px-10 py-4 rounded-2xl font-bold flex items-center gap-3 transition-transform hover:scale-105 ${
-                  isEmpathy
-                    ? 'bg-rose-400 hover:bg-rose-500 text-white shadow-lg shadow-rose-200'
-                    : 'bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold border-b-4 border-emerald-700 active:border-b-0'
-                }`}
-              >
-                <Mail size={20} /> Open Email Client
-              </a>
+              <div className="w-full max-w-md space-y-4 text-left">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={privateEmail}
+                  onChange={(e) => setPrivateEmail(e.target.value)}
+                  className={`w-full p-4 rounded-2xl border outline-none focus:ring-2 ${
+                    isEmpathy
+                      ? 'bg-rose-50/30 border-rose-100 focus:ring-rose-200'
+                      : 'bg-black border-emerald-900 focus:ring-emerald-500 text-emerald-400'
+                  }`}
+                />
+                <textarea
+                  rows={4}
+                  placeholder="Write a private note to Lynn..."
+                  value={privateMessage}
+                  onChange={(e) => setPrivateMessage(e.target.value)}
+                  className={`w-full p-4 rounded-2xl border outline-none focus:ring-2 resize-none ${
+                    isEmpathy
+                      ? 'bg-rose-50/30 border-rose-100 focus:ring-rose-200'
+                      : 'bg-black border-emerald-900 focus:ring-emerald-500 text-emerald-400'
+                  }`}
+                />
+                <button
+                  type="button"
+                  onClick={submitPrivateNote}
+                  disabled={isSendingPrivate || !privateEmail.trim() || !privateMessage.trim()}
+                  className={`w-full px-10 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-transform ${
+                    isSendingPrivate || !privateEmail.trim() || !privateMessage.trim()
+                      ? 'opacity-40 cursor-not-allowed'
+                      : 'hover:scale-105'
+                  } ${
+                    isEmpathy
+                      ? 'bg-rose-400 hover:bg-rose-500 text-white shadow-lg shadow-rose-200'
+                      : 'bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold border-b-4 border-emerald-700 active:border-b-0'
+                  }`}
+                >
+                  <Mail size={20} /> {isSendingPrivate ? 'Sending…' : 'Send Private Note'}
+                </button>
+              </div>
             </div>
           )}
         </div>

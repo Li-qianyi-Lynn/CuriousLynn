@@ -1,5 +1,5 @@
-import React from 'react';
 import { Github, Linkedin, PawPrint } from 'lucide-react';
+import React from 'react';
 import PawModal from './PawModal';
 
 const PawSection = ({ viewMode, isModalOpen, onOpenModal, onCloseModal }) => {
@@ -50,7 +50,7 @@ const PawSection = ({ viewMode, isModalOpen, onOpenModal, onCloseModal }) => {
             <Github />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/qianyi-li-lynn/"
             className="hover:scale-125 transition-transform"
           >
             <Linkedin />
