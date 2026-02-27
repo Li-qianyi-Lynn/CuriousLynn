@@ -5,7 +5,7 @@ import policyAnalyzerImg from '../assets/policyAnalyzer.png';
 import SceneSoundImg from '../assets/SceneSound.png';
 import snappyLinkImg from '../assets/snappyLink.png';
 import sweeperImg from '../assets/sweeper.png';
-import webdesignImg from '../assets/webdesign.png';
+import webdesignImg from '../assets/web2.png';
 import webDevImg from '../assets/webDev.png';
 
 
