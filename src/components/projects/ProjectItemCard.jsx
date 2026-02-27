@@ -11,6 +11,7 @@ const ProjectItemCard = ({ project, viewMode }) => {
       href={project.link}
       target="_blank"
       rel="noreferrer"
+      onClick={(e) => e.stopPropagation()}
       className={`group text-xs flex items-start gap-2 p-3 rounded-xl border transition-all ${
         isEmpathy
           ? 'bg-white border-rose-50 hover:border-rose-200 hover:shadow-sm'
@@ -33,7 +34,7 @@ const ProjectItemCard = ({ project, viewMode }) => {
         </div>
         {project.description && (
           <p
-            className={`mt-1 text-[10px] leading-snug opacity-70 ${
+            className={`mt-1 text-sm leading-snug opacity-70 ${
               isEmpathy ? 'font-serif' : 'font-mono'
             }`}
           >

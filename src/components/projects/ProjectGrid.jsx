@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectCategoryCard from './ProjectCategoryCard';
 
-const ProjectGrid = ({ categories, viewMode }) => {
+const ProjectGrid = ({ categories, viewMode, onCategoryClick }) => {
   return (
     <section
       id="projects"
@@ -20,12 +20,15 @@ const ProjectGrid = ({ categories, viewMode }) => {
             }`}
           />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {categories.map((cat) => (
             <ProjectCategoryCard
               key={cat.id}
               category={cat}
               viewMode={viewMode}
+              onClick={
+                onCategoryClick ? () => onCategoryClick(cat.id) : undefined
+              }
             />
           ))}
         </div>
