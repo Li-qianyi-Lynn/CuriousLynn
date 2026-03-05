@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from './components/layout/Header';
 import Hero from './components/hero/Hero';
-import ProjectGrid from './components/projects/ProjectGrid';
-import ImmersiveCategoryOverlay from './components/projects/ImmersiveCategoryOverlay';
+import Header from './components/layout/Header';
 import PawSection from './components/paw/PawSection';
+import ImmersiveCategoryOverlay from './components/projects/ImmersiveCategoryOverlay';
+import ProjectGrid from './components/projects/ProjectGrid';
 import CuriosityMeter from './components/ui/CuriosityMeter';
 import FloatingAssistant from './components/ui/FloatingAssistant';
 import { projectCategories } from './data/projects';
@@ -84,22 +84,22 @@ const App = () => {
         ]
       };
     })(),
-    'good-tools': (() => {
-      const base = getBaseCategory('good-tools');
+    'Full-Stack': (() => {
+      const base = getBaseCategory('Full-Stack');
       if (!base) return null;
       return {
         id: base.id,
         title: base.title,
-        tagline: 'Bridging Systems and Policy',
+        tagline: 'Building Bridges Between Frontend and Backend',
         longDesc:
-          "I enjoy building practical, end-to-end tools that move messy data into structured insight—from CSV cleaning pipelines and URL utilities to NLP workflows for reading long policy PDFs.",
+          "I enjoy building full-stack projects that combine frontend and backend development to create a seamless user experience.",
         bannerImage: base.bannerImage,
         projects: [
           ...base.projects,
           {
             name: 'Ops & Policy Notebook',
             description:
-              'A collection of experiments and notes on how infrastructure tooling and policy analysis can inform each other.',
+              'A full-stack notes and knowledge-sharing platform with user authentication, categories, collections, comments, real-time messaging, and full-text search.',
             link: 'https://github.com/Li-qianyi-Lynn'
           }
         ]

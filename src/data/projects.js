@@ -1,5 +1,6 @@
 import careerAIImg from '../assets/careerAI.png';
 import frontendBannerImg from '../assets/frontendBanner.png';
+import fullStackBannerImg from '../assets/fullStackBanner.png';
 import hciProjectImg from '../assets/hciProject.png';
 import hivideoImg from '../assets/hivideo.png';
 import lynnCatsWebImg from '../assets/lynnCatsWeb.png';

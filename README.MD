@@ -6,7 +6,7 @@ It is designed as a playful space where empathy (psychology) and logic (computer
 ### Features
 
 - **Dual view modes** – Toggle between *Empathy* and *Logic* modes to see different visual themes and microcopy.
-- **Core Focus grid** – Three main categories (AI + HCI, Frontend Design, Good Tools) that surface representative GitHub projects.
+- **Core Focus grid** – Three main categories (AI + HCI, Frontend Design, Full-Stack) that surface representative GitHub projects.
 - **Immersive project overlays** – Full-screen, narrative-style detail views for each category, with extended project stories.
 - **Interactive "Leave a Paw" section** – A small guestbook / feedback experience powered by Firebase.
 - **Floating assistant & curiosity meter** – Fun UI elements that respond to scroll and exploration progress.

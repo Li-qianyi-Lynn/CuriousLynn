@@ -1,5 +1,5 @@
-import React from 'react';
 import { Cat } from 'lucide-react';
+import React from 'react';
 
 const FloatingAssistant = ({ viewMode, visible }) => {
   const isEmpathy = viewMode === 'empathy';
