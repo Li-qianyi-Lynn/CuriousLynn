@@ -1,4 +1,5 @@
 import careerAIImg from '../assets/careerAI.png';
+import frontendBannerImg from '../assets/frontendBanner.png';
 import hciProjectImg from '../assets/hciProject.png';
 import hivideoImg from '../assets/hivideo.png';
 import lynnCatsWebImg from '../assets/lynnCatsWeb.png';
@@ -8,8 +9,6 @@ import snappyLinkImg from '../assets/snappyLink.png';
 import sweeperImg from '../assets/sweeper.png';
 import webdesignImg from '../assets/web2.png';
 import webDevImg from '../assets/webDev.png';
-import frontendBannerImg from '../assets/frontendBanner.png';
-import goodToolsBannerImg from '../assets/goodToolsBanner.png';
 
 
 
@@ -76,12 +75,12 @@ export const projectCategories = [
     ]
   },
   {
-    id: 'good-tools',
-    title: 'Good Tools',
+    id: 'Full-Stack',
+    title: 'Full-Stack Projects',
     desc:
-      'Practical tools for cleaning data, shortening links, and analyzing complex policy documents.',
+      'Full-Stack projects for honing my skills in web development and backend development.',
     icon: 'file-search',
-    bannerImage: goodToolsBannerImg,
+    bannerImage: fullStackBannerImg,
     projects: [
       {
         name: 'rise2gether-sweeper',
@@ -98,10 +97,10 @@ export const projectCategories = [
         image: snappyLinkImg
       },
       {
-        name: 'policy-analyzer',
-        link: 'https://github.com/Li-qianyi-Lynn/policy-analyzer',
+        name: 'LNote',
+        link: 'https://github.com/Li-qianyi-Lynn/LNote',
         description:
-          'An intelligent Prompt Generator specialized for analyzing China’s energy policy and just transition.',
+          'A full-stack notes and knowledge-sharing platform with user authentication, categories, collections, comments, real-time messaging, and full-text search.',
         image: policyAnalyzerImg
       }
       // {
