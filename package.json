@@ -5,10 +5,11 @@
   "description": "Curiosity-driven personal site for Lynn, mixing psychology and code.",
   "type": "module",
   "dependencies": {
+    "firebase": "^11.0.0",
+    "lucide-react": "^0.469.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "firebase": "^11.0.0",
-    "lucide-react": "^0.469.0"
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.5.0",
@@ -23,4 +24,3 @@
     "preview": "vite preview"
   }
 }
-

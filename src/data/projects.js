@@ -3,7 +3,7 @@ import frontendBannerImg from '../assets/frontendBanner.png';
 import fullStackBannerImg from '../assets/fullStackBanner.png';
 import hciProjectImg from '../assets/hciProject.png';
 import hivideoImg from '../assets/hivideo.png';
-import lynnCatsWebImg from '../assets/lynnCatsWeb.png';
+import lynnCatsWebImg from '../assets/miaoHome.png';
 import policyAnalyzerImg from '../assets/policyAnalyzer.png';
 import SceneSoundImg from '../assets/SceneSound.png';
 import snappyLinkImg from '../assets/snappyLink.png';
@@ -54,10 +54,11 @@ export const projectCategories = [
     bannerImage: frontendBannerImg,
     projects: [
       {
-        name: 'lynn-cats-web',
-        link: 'https://github.com/Li-qianyi-Lynn/lynn-cats-web',
+        name: 'MiaoHome',
+        link: 'https://miao-stories.vercel.app/',
+        github: 'https://github.com/Li-qianyi-Lynn/miaoHome',
         description:
-          "This is a Single Page Application (SPA) that showcases the cats I've cared for as a pet sitter. The website includes photos, introductions, and detailed caring guides for each cat, helping visitors understand each cat's personality and needs.",
+          "A Single Page Application (SPA) that showcases the cats I've cared for as a pet sitter — with individual profiles, personality descriptions, detailed care guides, and adoption information.",
         image: lynnCatsWebImg
       },
       {
