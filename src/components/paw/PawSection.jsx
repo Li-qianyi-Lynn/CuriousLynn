@@ -9,14 +9,14 @@ const PawSection = ({ viewMode, isModalOpen, onOpenModal, onCloseModal }) => {
     <section
       id="contact"
       className={`py-32 px-8 transition-colors duration-500 ${
-        isEmpathy ? 'bg-rose-50' : 'bg-black'
+        isEmpathy ? 'bg-rose-50' : 'bg-[#040804]'
       }`}
     >
       <div className="max-w-4xl mx-auto text-center space-y-12">
         <div className="space-y-4">
           <h2 className="text-5xl font-black italic uppercase tracking-tighter">
             Leave a{' '}
-            <span className={isEmpathy ? 'text-rose-500' : 'text-emerald-400'}>Paw Print</span>
+            <span className={isEmpathy ? 'text-rose-600' : 'text-green-400'}>Paw Print</span>
           </h2>
           <p className="opacity-60 max-w-lg mx-auto">
             Click the paw to share your thoughts publicly or send me a private note.
@@ -29,8 +29,8 @@ const PawSection = ({ viewMode, isModalOpen, onOpenModal, onCloseModal }) => {
             onClick={onOpenModal}
             className={`p-12 rounded-full transition-all duration-500 transform hover:scale-110 relative z-10 ${
               isEmpathy
-                ? 'bg-white text-rose-400 shadow-2xl'
-                : 'bg-slate-900 text-emerald-500 border-2 border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)]'
+                ? 'bg-white text-rose-500 shadow-2xl'
+                : 'bg-[#0a120a] text-green-400 border-2 border-green-700 shadow-[0_0_30px_rgba(74,140,92,0.2)]'
             }`}
           >
             <PawPrint size={80} className="animate-pulse" />
